@@ -1,0 +1,92 @@
+.app-box {
+    border-color: #ddd;
+    background-color: #fff;
+    color: #444;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 16px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px;
+}
+
+
+.list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+}
+
+.bar {
+    height: 50px !important;
+}
+
+.has-subheader {
+    top: 100px !important;
+}
+
+.item-content {
+    padding: 4px 49px 4px 16px !important;
+}
+
+.no-left-right-padding-for-side-menu-buttons {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.small-left-right-padding-for-side-menu-buttons {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.bar-header {
+    height: 50px !important;
+}
+
+.bar-header > * {
+    margin-top: 20px !important;
+}
+
+.bar-subheader {
+    top: 50px !important;
+}
+
+.scroll-content {
+    top: 0 !important;
+    bottom: 0 !important;
+    padding-top: 30px !important;
+}
+
+.title {
+    margin-top: 0px !important;
+    font-size: 25px !important;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.scroll-content {
+    top: 20px !important;
+    bottom: 0 !important;
+    padding-top: 100px !important;
+}
+
+
+

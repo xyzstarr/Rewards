@@ -1,0 +1,41 @@
+<ion-view view-title="{{name}}" xmlns="http://www.w3.org/1999/html">
+    <ion-content class="padding">
+        <div class="card list app-box">
+            <!--<div class="flex row item">-->
+			<div class="">
+                <div class="col col-34 bmw-avatar-frame bmw-avatar-frame-item-no-border">
+                    <img style="width: 90px;height: 90px;" src="http://thitos:8080/employeepics/amy_jones.jpg">
+                </div>
+                <div class="col col-66 bmw-avatar-frame-item-no-border">
+                    <div class="row">{{email}}</div>
+                    <div class="row" style="text-overflow:ellipsis !important;">thato.mantai@partner.bmwfinance.co.za</div>
+                    <div class="row">huh{{percentile}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card list app-box">
+            <div class="row progress-radial-container">
+                <div class="progress-radial progress-{{percentage}}">
+                    <div class="overlay"><span>Received <br/>{{percentage}} %<br/> of total rewards today</span></div>
+                </div>
+            </div>
+        </div>
+
+        <a ng-hide="true" class="item item-icon-left assertive" href="#">
+            <i class="icon ion-music-note"></i>
+            Start listening
+        </a>
+
+        <div class="list card">
+            <div class="wrapper">
+            <a class="ripplelink cyan" href="#">Top Earner</a>
+            <a class="ripplelink lightgreen" href="#">Stats</a>
+            <a class="ripplelink amber" href="#">Reward Colleague</a>
+            <a class="ripplelink orange" href="#">View Team</a>
+                <a class="ripplelink cyan" href="#">Rewards Earned Today</a>
+                <a class="ripplelink lightgreen" href="#">Rewards Earned This Week</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,69 @@
+<ion-view view-title="Colleagues">
+    <ion-content>
+        <div class="card list">
+            <div class="item item-calm">
+                <label class="item item-input item-floating-label">
+                    <i class="icon ion-android-search placeholder-icon input-label"> Search Colleagues</i>
+                    <input type="text" placeholder="Search Colleagues" ng-model="FilterColleagues">
+                </label>
+            </div>
+        </div>
+        <ion-list>
+            <ion-item class="card item-dark" ng-repeat="colleague in colleagues | filter:FilterColleagues" type="item-text-wrap"
+                      ng-href="#/app/colleagues/{{colleague.user_id}}">
+                <div class="row">
+                    <div class="col"><h1>{{colleague.name}}</h1></div>
+                </div>
+                <div class="row item-avatar">
+                    <div class="col col-20"><img class="bmw-avatar-frame" style="width: 90px;height: 90px;"
+                                                 src="http://thitos:8080/employeepics/amy_jones.jpg"></div>
+                    <div class="col col-25 col-offset-20">
+                        <div class="row">
+                            <div class="col col-20 header">Rewards</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">Today</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">This Week</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">This Month</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">This Year</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">Overall</div>
+                        </div>
+                    </div>
+                    <div class="col col-25 col-offset-20">
+                        <div class="row">
+                            <div class="col col-20 header">Count</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">{{colleague.total_rewards_today}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">{{colleague.total_rewards_this_week}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">{{colleague.total_rewards_this_month}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">{{colleague.total_rewards_this_year}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-20">{{colleague.total_rewards}}</div>
+                        </div>
+                    </div>
+                </div>
+                <span class="badge badge-positive">{{colleague.total_rewards}}</span>
+                <ion-option-button ng-click="reward_a_colleague(colleague)" class="icon ion-beer icon-assertive"></ion-option-button>
+                <ion-option-button ng-click="doalert('colleague');" class="icon ion-ribbon-a"></ion-option-button>
+                <ion-option-button class="icon ion-stats-bars"
+                                   href="#/app/colleagues/{{colleague.user_id}}"></ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

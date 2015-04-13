@@ -1,0 +1,46 @@
+<!--
+This template loads for the 'tab.friend-detail' state (app.js)
+'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+The FriendsCtrl pulls data from the Friends service (service.js)
+The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{colleague.info.name}}">
+    <ion-content class="padding">
+        <img ng-src="{{friend.face}}" style="width: 64px; height: 64px">
+        <h3>{{colleague.info.name}}</h3>
+        <div class="card">
+            <div class="row">
+                <div class="col">QT Number</div>
+                <div class="col">{{colleague.info.name}}</div>
+            </div>
+            <div class="row">
+                <div class="col">Total Rewards Today</div>
+                <div class="col">{{colleague.info.email}}</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div class="col">Total Rewards</div>
+                <div class="col">{{colleague.rewards.total_rewards}}</div>
+            </div>
+            <div class="row">
+                <div class="col">Total Rewards Today</div>
+                <div class="col">{{colleague.rewards.total_rewards_today}}</div>
+            </div>
+            <div class="row">
+                <div class="col">Total Rewards This Week</div>
+                <div class="col">{{colleague.rewards.total_rewards_this_week}}</div>
+            </div>
+            <div class="row">
+                <div class="col">Total Rewards This Month</div>
+                <div class="col">{{colleague.rewards.total_rewards_this_month}}</div>
+            </div>
+            <div class="row">
+                <div class="col">Total Rewards This Year</div>
+                <div class="col">{{colleague.rewards.total_rewards_this_year}}</div>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>

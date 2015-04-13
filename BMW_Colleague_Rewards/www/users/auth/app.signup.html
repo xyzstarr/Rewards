@@ -1,0 +1,58 @@
+<ion-view view-title="Sign Up">
+    <ion-nav-buttons side="left">
+        <load-shedding-nav-button></load-shedding-nav-button>
+    </ion-nav-buttons>
+    <load-shedding-status></load-shedding-status>
+
+    <ion-content class="content has-subheader">
+        <form ng-submit="SignUpNewUser(SignUpData)">
+            <div class="card list list-inset">
+                <div class="item item-divider">
+                    Sign Up
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="QT Number" ng-model="SignUpData.qt_number">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Name" ng-model="SignUpData.name">
+                </label>
+                <label class="item item-input">
+                    <input type="email" placeholder="Email" ng-model="SignUpData.email">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Phone" ng-model="SignUpData.phone">
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Password" ng-model="SignUpData.password">
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Confirm Password" ng-model="SignUpData.confirmpassword">
+                </label>
+
+            </div>    <div class="padding">
+                <button type="submit" class ="padding button button-block button-dark">
+                    <span ng-show="!loading">Create Account</span>
+                    <i ng-show="loading" class="ion-loading-b"></i>
+                </button>
+            </div>
+
+        </form>
+        <script id="sign-up-modal.html" type="text/ng-template">
+            <div class="modal sign-up-modal transparent" ng-click="closeModal()">
+            <ion-pane class="transparent">
+            <ion-content>
+            <div class="card">
+            <div class="item item-divider">
+            <h2 class="title">{{signup_result}}</h2>
+            </div>
+            <div class="item item-text-wrap">
+            {{signup_message}}
+            </div>
+            </div>
+            </ion-content>
+            </ion-pane>
+            </div>
+        </script>
+    </ion-content>
+</ion-view>
+<tabs-for-side-menu></tabs-for-side-menu>
