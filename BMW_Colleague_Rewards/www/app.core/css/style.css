@@ -8,28 +8,38 @@
     /*background-color: rgba(0, 0, 0, 0.21) !important;*/
     /*background-color: #444 !important;*/
     /*color:#dadada !important;*/
-    background-color: #304771;
-	color:beige;
+    /*background-color: #304771;
+    background-color: #243040;*/
+    color:#C7CFD9;
+    background-image: radial-gradient(center center, circle cover,#243040, #ffeda3);
 }
 .card, .button, .badge{
-border-radius:0;
+    border-radius:0;
+    background-color: #304771;
+    /*    background-color: rgba(56, 176, 249, 0.75);*/
+}
+
+
+form .card{
+    border-radius:0;
+    rgba(56, 176, 249, 0.75);
 }
 
 .blue-card{
-background-color: rgba(56, 176, 249, 0.75);
+    background-color: rgba(56, 176, 249, 0.75);
 }
 .item-dark h1{
-color:inherit;
+    color:inherit;
 }
 
 .button[type="submit"]{
-width:92% !important;
-margin-left:5% !important;
+    width:92% !important;
+    margin-left:5% !important;
 }
 
 input[type="text"],[type="password"], .input-label{
-width:90% !important;
-margin-left:5% !important;
+    width:90% !important;
+    margin-left:5% !important;
 }
 
 .popup-head {
@@ -64,4 +74,16 @@ input{
 
 .card{
     box-shadow: 0 1px 5px rgba(11, 1, 1, 1) !important;
+}
+
+
+
+.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.item{
+    padding: 16px;
+    border-color: #52C0DA;
 }
