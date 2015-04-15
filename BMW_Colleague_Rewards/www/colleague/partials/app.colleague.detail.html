@@ -6,9 +6,10 @@ The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{colleague.info.name}}">
     <ion-content class="padding">
-        <img ng-src="{{friend.face}}" style="width: 64px; height: 64px">
-        <h3>{{colleague.info.name}}</h3>
-        <div class="card">
+        <!--<img ng-src="{{friend.face}}" style="width: 64px; height: 64px">-->
+        <img class="bmw-avatar-frame" ng-src="http://thitos:8080/employeepics/amy_jones.jpg" style="width: 120px; height: 120px">
+        <h3 class="white-font">{{colleague.info.name}}</h3>
+        <div class="card bmw-item dark-bg white-font">
             <div class="row">
                 <div class="col">QT Number</div>
                 <div class="col">{{colleague.info.name}}</div>
@@ -18,7 +19,7 @@ The Friends service returns an array of friend data
                 <div class="col">{{colleague.info.email}}</div>
             </div>
         </div>
-        <div class="card">
+        <div class="card bmw-item dark-bg white-font">
             <div class="row">
                 <div class="col">Total Rewards</div>
                 <div class="col">{{colleague.rewards.total_rewards}}</div>

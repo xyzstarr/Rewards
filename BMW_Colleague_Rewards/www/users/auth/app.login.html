@@ -1,7 +1,7 @@
 <ion-view view-title="Log In">
     <ion-content class="content has-subheader">
         <form ng-submit="UserLogin(LoginData)">
-            <div class="card list">
+            <div class="card login-card list">
                 <label class="item item-input item-floating-label">
                     <i class="icon ion-android-mail placeholder-icon input-label"> Email Address</i>
                     <input type="text" placeholder="Email Address" ng-model="LoginData.email">
@@ -10,7 +10,7 @@
                     <i class="icon ion-android-lock placeholder-icon input-label"> Password</i>
                     <input type="password" placeholder="Password" ng-model="LoginData.password">
                 </label>
-                <label class="item">
+                <label class="">
                     <button class="button button-block button-dark" type="submit">Log In</button>
                 </label>
             </div>
