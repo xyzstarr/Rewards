@@ -1,8 +1,14 @@
 @import "http://fonts.googleapis.com/css?family=Montserrat:300,400,700";
 .rwd-table {
+
     margin: 1em 0;
     min-width: 300px;
     width: 100%;
+
+    background: rgba(5, 34, 63, 0.66) !important;
+    color: #fff;
+    /* border-radius: .4em; */
+    overflow: hidden;
 }
 .rwd-table tr {
     border-top: 1px solid #ddd;
@@ -21,7 +27,8 @@
     padding-bottom: .5em;
 }
 .rwd-table td:before {
-    content: attr(data-th) ": ";
+    /*content: attr(data-th) ": ";*/
+    content: attr(data-th) "";
     font-weight: bold;
     width: 6.5em;
     display: inline-block;

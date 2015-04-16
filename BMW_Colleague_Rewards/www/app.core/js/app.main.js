@@ -3,25 +3,29 @@
     angular
             .module('app')
             .constant('constants',{
-                APP_TITLE: 'BMW Cookie Reward System',
-                APP_DESCRIPTION: 'Motivating our fellow colleagues.',
-                APP_VERSION: '1.0'
+                APP_TITLE:'BMW Cookie Reward System',
+                APP_DESCRIPTION:'Motivating our fellow colleagues.',
+                APP_VERSION:'1.0'
             })
             .constant('AUTH_EVENTS',{
-                loginSuccess: 'auth-login-success',
-                loginFailed: 'auth-login-failed',
-                logoutSuccess: 'auth-logout-success',
-                sessionTimeout: 'auth-session-timeout',
-                notAuthenticated: 'auth-not-authenticated',
-                notAuthorized: 'auth-not-authorized'
+                loginSuccess:'auth-login-success',
+                loginFailed:'auth-login-failed',
+                logoutSuccess:'auth-logout-success',
+                sessionTimeout:'auth-session-timeout',
+                notAuthenticated:'auth-not-authenticated',
+                notAuthorized:'auth-not-authorized'
             })
             .run(['$ionicPlatform','$rootScope','$state','$location','AppApi','AuthService',fnAppRun])
             ;
     function fnAppRun($ionicPlatform,$rootScope,$state,$location,AppApi,Session){
+
+
+
         $ionicPlatform.ready(platformIsReady);
         $rootScope.$on('$stateChangeStart',fnStateChangeStart);
 
         function platformIsReady(){
+
             if(window.cordova&&window.cordova.plugins.Keyboard){
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }

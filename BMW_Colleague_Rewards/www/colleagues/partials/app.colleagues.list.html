@@ -6,51 +6,88 @@
                 <input type="text" placeholder="Search Colleagues" ng-model="FilterColleagues">
             </label>
         </div>
-
-
-
         <ion-list>
-            <ion-item>
+            <ion-item class="dark-bg bmw-dark-bg bmw-item-content bmw-list-item">
                 <div class="row">Sorted By: {{colleagues[0].order_by_value_label}}</div>
             </ion-item>
-            <ion-item>
-                <div class="row light-bg">
+            <!--
+                <ion-item class="dark-bg bmw-dark-bg bmw-item-content bmw-list-item">
+                    <div class="row">
+                      <div class="col" ng-click="predicate='name';
+                            reverse=!reverse">Name</div>
+                        <div class="col" ng-click="predicate='total_rewards_today';
+                            reverse=!reverse">Today</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_this_week');
+                            predicate='total_rewards_this_week';
+                            reverse=!reverse">Week</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_this_month');
+                            predicate='total_rewards_this_month';
+                            reverse=!reverse">Month</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_this_year');
+                            predicate='total_rewards_this_year';
+                            reverse=!reverse">Year</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards');
+                            predicate='total_rewards';
+                            reverse=!reverse">Overall</div>
+                    </div>
+                    <div class="row">
+                        <div class="col" ng-click="predicate='name';reverse=!reverse">Name</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_today');predicate='total_rewards_today';reverse=!reverse">Today</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_this_week');predicate='total_rewards_this_week';reverse=!reverse">Week</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_this_month');predicate='total_rewards_this_month';reverse=!reverse">Month</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards_this_year');predicate='total_rewards_this_year';reverse=!reverse">Year</div>
+                        <div class="col" ng-click="change_badge_value('total_rewards');predicate='total_rewards';reverse=!reverse">Overall</div>
+                    </div>
+                </ion-item>
+            -->
+            <!--
+                The filtering DIV below must never be nested inside <ion-item>
+            -->
+            <div class="white-font row bmw-dark-bg">
+                <div class="col" ng-click="predicate='name';
+                    reverse=!reverse">Name</div>
+                <div class="col" ng-click="change_badge_value('total_rewards_today');
+                    predicate='total_rewards_today';
+                    reverse=!reverse">Today</div>
+                <div class="col" ng-click="change_badge_value('total_rewards_this_week');
+                    predicate='total_rewards_this_week';
+                    reverse=!reverse">Week</div>
+                <div class="col" ng-click="change_badge_value('total_rewards_this_month');
+                    predicate='total_rewards_this_month';
+                    reverse=!reverse">Month</div>
+                <div class="col" ng-click="change_badge_value('total_rewards_this_year');
+                    predicate='total_rewards_this_year';
+                    reverse=!reverse">Year</div>
+                <div class="col" ng-click="change_badge_value('total_rewards');
+                    predicate='total_rewards';
+                    reverse=!reverse">Overall</div>
+            </div>
 
-                    <div class="col" ng-click="predicate='name';
-                        reverse=!reverse">Name</div>
-                    <div class="col" ng-click="change_badge_value('total_rewards_today');
-                        predicate='total_rewards_today';
-                        reverse=!reverse">Today</div>
-                    <div class="col" ng-click="change_badge_value('total_rewards_this_week');
-                        predicate='total_rewards_this_week';
-                        reverse=!reverse">Week</div>
-                    <div class="col" ng-click="change_badge_value('total_rewards_this_month');
-                        predicate='total_rewards_this_month';
-                        reverse=!reverse">Month</div>
-                    <div class="col" ng-click="change_badge_value('total_rewards_this_year');
-                        predicate='total_rewards_this_year';
-                        reverse=!reverse">Year</div>
-                    <div class="col" ng-click="change_badge_value('total_rewards');
-                        predicate='total_rewards';
-                        reverse=!reverse">Overall</div>
+
+            <ion-item class="dark-bg bmw-dark-bg bmw-item-content bmw-list-item" ng-repeat="colleague in colleagues|filter:FilterColleagues|orderBy:predicate:reverse" type="item-text-wrap"
+                      ng-href="#/app/colleagues/{{colleague.user_id}}" ng-mouseover="showDetails===colleague.user_id">
+                <div  class="row" style="height: 50px;" >
+                    <div class="col col-20">
+                        <img class="bmw-avatar-frame" style="width: 50px;height: 50px;"
+                             src="http://thitos:8080/employeepics/amy_jones.jpg">
+                    </div>
+                    <div class="col col-80">
+                        <h2 style="color:whitesmoke">{{colleague.name}}</h2>
+                    </div>
                 </div>
-            </ion-item>
 
-
-            <ion-item class="dark-bg" ng-repeat="colleague in colleagues| filter:FilterColleagues| orderBy:predicate:reverse" type="item-text-wrap"
-                      ng-href="#/app/colleagues/{{colleague.user_id}}">
-
-                <h3 style="color:whitesmoke">{{colleague.name}}</h3>
-                <div ng-show="false">Today:{{colleague.total_rewards_today}} |
-                    This Week:{{colleague.total_rewards_this_week}} |
-                    This Month:{{colleague.total_rewards_this_month}} |
-                    This Year:{{colleague.total_rewards_this_year}} |
-                    Overall:{{colleague.total_rewards}}
+                <div ng-if="showDetails==colleague.user_id" id="div_colleague_rewards_{{colleague.user_id}}"  style="font-size:12px;">
+                    <h3 ng-show="false" style="color:whitesmoke">{{colleague.name}}</h3>
+                    Today: {{colleague.total_rewards_today}} |
+                    This Week: {{colleague.total_rewards_this_week}} |
+                    This Month: {{colleague.total_rewards_this_month}} |
+                    This Year: {{colleague.total_rewards_this_year}} |
+                    Overall: {{colleague.total_rewards}}
                 </div>
-                <span class="badge badge-royal">{{colleague.order_by_value}}</span>
-                <ion-option-button ng-click="reward_a_colleague(colleague)" class="icon ion-beer icon-assertive"></ion-option-button>
-                <ion-option-button ng-click="doalert('colleague');" class="icon ion-ribbon-a"></ion-option-button>
-                <ion-option-button class="icon ion-stats-bars"
+                <span class="badge bmw-badge">{{colleague.order_by_value}}</span>
+                <ion-option-button ng-click="reward_a_colleague(colleague)" class="button-assertive icon ion-beer icon-assertive"></ion-option-button>
+                <ion-option-button ng-click="doalert('colleague');" class="button-royal icon ion-ribbon-a"></ion-option-button>
+                <ion-option-button class="button-calm icon ion-stats-bars"
                                    href="#/app/colleagues/{{colleague.user_id}}"></ion-option-button>
             </ion-item>
         </ion-list>

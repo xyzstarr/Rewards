@@ -3,35 +3,48 @@
         <div>
             <table class="rwd-table">
                 <tbody>
-                <tr>
-                    <td class="large-padding" ng-click="predicate = 'name'; reverse=!reverse">Name</td>
-                    </tr><tr><td class="large-padding" ng-click="predicate = 'total_rewards_today'; reverse=!reverse">Today</td>
-                </tr><tr><td class="large-padding" ng-click="predicate = 'total_rewards_this_week'; reverse=!reverse">Week</td>
-                </tr><tr><td class="large-padding" ng-click="predicate = 'total_rewards_this_month'; reverse=!reverse">Month</td>
-                </tr><tr><td class="large-padding" ng-click="predicate = 'total_rewards_this_year'; reverse=!reverse">Year</td>
-                </tr><tr> <td class="large-padding" ng-click="predicate = 'total_rewards'; reverse=!reverse">Overall</td>
-                </tr></tbody>
-                </table>
+                    <tr>
+                        <td class="large-padding" ng-click="predicate='name';
+                            reverse=!reverse">Name</td>
+                    </tr><tr><td class="large-padding" ng-click="predicate='total_rewards_today';
+                        reverse=!reverse">Today</td>
+                    </tr><tr><td class="large-padding" ng-click="predicate='total_rewards_this_week';
+                        reverse=!reverse">Week</td>
+                    </tr><tr><td class="large-padding" ng-click="predicate='total_rewards_this_month';
+                        reverse=!reverse">Month</td>
+                    </tr><tr><td class="large-padding" ng-click="predicate='total_rewards_this_year';
+                        reverse=!reverse">Year</td>
+                    </tr><tr> <td class="large-padding" ng-click="predicate='total_rewards';
+                        reverse=!reverse">Overall</td>
+                    </tr></tbody>
+            </table>
 
             <table class="rwd-table">
                 <tbody>
-                <tr>
-<th class="large-padding" ng-click="predicate = 'name'; reverse=!reverse">Name</th>
-                    <th class="large-padding" ng-click="predicate = 'total_rewards_today'; reverse=!reverse">Today</th>
-                    <th class="large-padding" ng-click="predicate = 'total_rewards_this_week'; reverse=!reverse">Week</th>
-                    <th class="large-padding" ng-click="predicate = 'total_rewards_this_month'; reverse=!reverse">Month</th>
-                    <th class="large-padding" ng-click="predicate = 'total_rewards_this_year'; reverse=!reverse">Year</th>
-                    <th class="large-padding" ng-click="predicate = 'total_rewards'; reverse=!reverse">Overall</th>
-                </tr>
-                <tr ng-href="#/app/colleagues/{{colleague.user_id}}"
-                    ng-repeat="colleague in leaderboard | filter:FilterColleagues| orderBy:predicate:reverse">
-                    <td ng-click="predicate = 'name'; reverse=!reverse" data-th="Name" class="large-padding">{{colleague.name}}</td>
-                    <td data-th="Today"  class="large-padding">{{colleague.total_rewards_today}}</td>
-                    <td data-th="Week"  class="large-padding">{{colleague.total_rewards_this_week}}</td>
-                    <td data-th="Month"  class="large-padding">{{colleague.total_rewards_this_month}}</td>
-                    <td data-th="Year"  class="large-padding">{{colleague.total_rewards_this_year}}</td>
-                    <td data-th="Overall"  class="large-padding">{{colleague.total_rewards}}</td>
-                </tr>
+                    <tr>
+                        <th class="large-padding" ng-click="predicate='name';
+                            reverse=!reverse">Name</th>
+                        <th class="large-padding" ng-click="predicate='total_rewards_today';
+                            reverse=!reverse">Today</th>
+                        <th class="large-padding" ng-click="predicate='total_rewards_this_week';
+                            reverse=!reverse">Week</th>
+                        <th class="large-padding" ng-click="predicate='total_rewards_this_month';
+                            reverse=!reverse">Month</th>
+                        <th class="large-padding" ng-click="predicate='total_rewards_this_year';
+                            reverse=!reverse">Year</th>
+                        <th class="large-padding" ng-click="predicate='total_rewards';
+                            reverse=!reverse">Overall</th>
+                    </tr>
+                    <tr ng-href="#/app/colleagues/{{colleague.user_id}}"
+                        ng-repeat="colleague in leaderboard| filter:FilterColleagues| orderBy:predicate:reverse">
+                        <td ng-click="predicate='name';
+                                reverse=!reverse" data-th="Name" class="large-padding">{{colleague.name}}</td>
+                        <td data-th="Today"  class="large-padding">{{colleague.total_rewards_today}}</td>
+                        <td data-th="Week"  class="large-padding">{{colleague.total_rewards_this_week}}</td>
+                        <td data-th="Month"  class="large-padding">{{colleague.total_rewards_this_month}}</td>
+                        <td data-th="Year"  class="large-padding">{{colleague.total_rewards_this_year}}</td>
+                        <td data-th="Overall"  class="large-padding">{{colleague.total_rewards}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

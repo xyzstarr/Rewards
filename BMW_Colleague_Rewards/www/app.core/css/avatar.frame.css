@@ -1,8 +1,21 @@
-.bmw-avatar-frame{border: 2px solid #c7b89e;}
+.dark-bg .bmw-dark-bg{
+    background-color: rgba(91, 107, 126, 0.8);
+    color:white;
+}
+.bmw-avatar-frame {
+    border: 1px solid #F77000;
+    border-radius: 5%;
+    max-width: 90px;
+    max-height: 90px;
+}
+
+
 .bmw-avatar-frame,.bmw-avatar-frame img{
     /*width: 50px;*/
     /*height: 50px;*/
-    border-radius: 50%;
+    border-radius: 5%;
+    margin-top: 5px;
+
     /* -webkit-border-radius: 30px; Saf3+, Chrome */
     /*border-radius: 30px;  Opera 10.5, IE 9 */
     /*-moz-border-radius: 30px;  Disabled for FF1+ */
@@ -11,4 +24,79 @@
 .bmw-avatar-frame-item-no-border{
     border-width: 0px !important;
     text-align: start !important;
+}
+
+
+.bmw-list-item {
+    border-color: #9B4C00;
+    background-color: rgba(7, 39, 90, 0.13);
+    color: #D8E3E8;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px;
+}
+
+.bmw-badge {
+    background-color: rgba(244, 106, 35, 0.9);
+    color: #FFFFFF;
+    z-index: 1;
+    display: inline-block;
+    padding: 3px 8px;
+    min-width: 10px;
+    border-radius: 3px;
+    vertical-align: baseline;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 25px;
+    border-color: #000;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.item-complex .item-content {
+    border-color: #000;
+    background-color: rgba(4, 14, 29, 0.42);
+    color: #90CFE1;
+}
+
+.bar.bar-dark {
+    border-color: #111;
+    background-color: #1F5780;
+    background-image: linear-gradient(0deg, #111, #111 50%, transparent 50%);
+    color: #fff;
+}
+
+.tabs-dark > .tabs, .tabs.tabs-dark {
+    border-color: #111;
+    background-color: #1F5780;
+    background-image: linear-gradient(15deg, #094067, #0422F7 50%, transparent 50%);
+    color: #fff;
+}
+
+.bmw-colleague-item {
+    /* border-color: #C04242; */
+    background-color: rgba(27, 77, 115, 0.82);
+    color: #F7ECEC;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    padding: 16px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px;
+}
+
+.item-complex .item-content, .item-radio .item-content {
+    position: relative;
+    z-index: 2;
+    padding: 0px 83px 16px 0px;
+    border: none;
 }
